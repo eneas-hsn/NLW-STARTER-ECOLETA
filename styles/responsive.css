@@ -17,6 +17,7 @@
         margin-top: -100px;
         
     }
+
 }
 @media(min-width:1760px){
     #page-home{
@@ -26,5 +27,10 @@
 @media(max-height:760px){
     #page-home{
         background-position-y: 150px;
+    }
+}
+@media(max-width:900px){
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
     }
 }
