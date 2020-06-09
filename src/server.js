@@ -1,6 +1,9 @@
 const express=require("express")
 const server=express()
 
+//pegar o banco de dados
+const db=require("./database/db")
+
 //configurar pasta pública
 server.use(express.static("public"))
 
@@ -19,12 +22,21 @@ nunjucks.configure("src/views",{
 //página inicial
 //req é uma requisição e res é uma resposta
 server.get("/",(req,res)=> {
-    res.render("index.html")
+    return res.render("index.html")
 })
 //a barra indica o caminho que o servidor vai seguir
 server.get("/create-point",(req,res)=> {
-    res.render("create-point.html")
+     return res.render("create-point.html")
 })
 server.get("/search-results",(req,res)=> {
-    res.render("search-results.html")
+   
+    db.all(`SELECT * FROM places`, function(err,rows) {
+        if (err) {
+            return console.log(err)
+        }
+        console.log("Aqui estão seus registros")
+        console.log(rows)
+        return res.render("search-results.html", {places:rows})
+    })
+    
 })
