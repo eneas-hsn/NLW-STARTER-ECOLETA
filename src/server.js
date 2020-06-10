@@ -34,9 +34,10 @@ server.get("/search-results",(req,res)=> {
         if (err) {
             return console.log(err)
         }
+        const total= rows.length
         console.log("Aqui estão seus registros")
         console.log(rows)
-        return res.render("search-results.html", {places:rows})
+        return res.render("search-results.html", {places:rows, total:total})
     })
     
 })
