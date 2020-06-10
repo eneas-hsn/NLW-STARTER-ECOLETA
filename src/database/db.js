@@ -59,10 +59,10 @@ db.serialize(() => {
     //     console.log(rows)
     // })
     // //deletar um dado da tabela
-    db.run(`DELETE FROM places WHERE id=?`,[3], function(err,rows) {
-        if (err) {
-            return console.log(err)
-        }
-        console.log("Registro deletado com sucesso")   
-    })
+    // db.run(`DELETE FROM places WHERE id=?`,[3], function(err,rows) {
+    //     if (err) {
+    //         return console.log(err)
+    //     }
+    //     console.log("Registro deletado com sucesso")   
+    // })
 })

@@ -54,6 +54,7 @@ document
         const itemLi=event.target
         itemLi.classList.toggle('selected')
         const itemId=itemLi.dataset.id
+        console.log('ITEM ID:', itemId)
         // verificar se exitem itens selecionados, se sim, pegar os itens selecionados
         //se já estiver selecionado, tirar da seleção
         const alreadySelected=selectedItems.findIndex(item =>{
