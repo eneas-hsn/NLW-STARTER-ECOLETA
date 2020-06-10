@@ -5,6 +5,7 @@
 
 {% block styles %}
     <link rel="stylesheet" href="/styles/create-point.css">
+    <link rel="stylesheet" href="/styles/modal.css">
 {% endblock styles %}
 
 {% block content %}
@@ -35,7 +36,7 @@
                     </div>
                     <div class="field">
                         <label for="address">Número/Complemento</label>
-                        <input type="number" name="address2" required="required">
+                        <input type="text" name="address2" required="required">
                     </div>
                 </div>
                 <div class="field-group">
@@ -84,11 +85,18 @@
                             <span>Óleo e Cozinha</span>
                         </li>
                     </div>
-                    <input type="hidden" name="items" value="">
+                    <input type="hidden" name="items">
                 </fieldset>
                 <button type="submit">Cadastrar ponto de coleta</button>
             </form>
         </div>
+
+        {% block modal %}
+            {% if saved %}
+                {%include "partials/point-created.html"%}
+            {% endif %}
+        {% endblock modal %}
+
     {% endblock content %}
     {% block scripts %}
         <script src="/scripts/create-point.js"></script>

@@ -51,7 +51,7 @@ db.serialize(() => {
 //     db.run(query, values,afterInsertData)
 
     //consultando dados na tabela
-    // db.all(`SELECT name FROM places`, function(err,rows) {
+    // db.all(`SELECT id FROM places`, function(err,rows) {
     //     if (err) {
     //         return console.log(err)
     //     }
@@ -59,7 +59,7 @@ db.serialize(() => {
     //     console.log(rows)
     // })
     // //deletar um dado da tabela
-    // db.run(`DELETE FROM places WHERE id=?`,[3], function(err,rows) {
+    // db.run(`DELETE FROM places WHERE id=?`,[4], function(err,rows) {
     //     if (err) {
     //         return console.log(err)
     //     }

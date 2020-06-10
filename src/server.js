@@ -49,23 +49,25 @@ server.post("/savepoint", (req,res)=>{
 )VALUES(?,?,?,?,?,?,?)`
 
     const values = [
-        "https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80",
-        "Papersider",
-        "Guilherme Gemballa, Jardim América",
-        "Número 260",
-        "Santa Catarina",
-        "Rio do Sul",
-        "Residuos Eletrônicos, Lâmpadas"
+        req.body.image,
+        req.body.name,
+        req.body.address,
+        req.body.address2,
+        req.body.state,
+        req.body.city,
+        req.body.items
     ]
 
     function afterInsertData(err) {
         if (err) {
             return console.log(err)
+            return console.log("Erro no cadastro")
         }
         console.log("Cadastrado com sucesso")
         console.log(this)
     }
     db.run(query, values,afterInsertData)
+    return res.render("create-point.html", {saved:true})
 })
 
 server.get("/search-results",(req,res)=> {

@@ -43,14 +43,13 @@ document
     // Pegar todos os li
     const itensToCollect=document.querySelectorAll(".itens-grid li")
 
-    
     for(const item of itensToCollect){
         item.addEventListener("click",handleSelectedItem)
     }
     const collectedItems=document.querySelector("input[name=items]")
     let selectedItems=[]
 
-    function handleSelectedItem() {
+    function handleSelectedItem(event) {
         const itemLi=event.target
         itemLi.classList.toggle('selected')
         const itemId=itemLi.dataset.id
@@ -72,7 +71,7 @@ document
             //se não estiver selecionado, adicoonar à seleção
             selectedItems.push(itemId)
         }
-        console.log(selectedItems)
+        console.log("selectedItens:",selectedItems)
         //atualizar o campo escondido com os itens selecionados
         collectedItems.value=selectedItems
     }
