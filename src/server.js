@@ -70,9 +70,15 @@ server.post("/savepoint", (req,res)=>{
     return res.render("create-point.html", {saved:true})
 })
 
-server.get("/search-results",(req,res)=> {
-   
-    db.all(`SELECT * FROM places`, function(err,rows) {
+server.get("/search",(req,res)=> {
+    //caso pesquisa vazia
+    const search=req.query.search
+    if (search=='') {
+        return res.render("search-results.html", {total:0})
+    }
+    
+    //pegar os dados do banco de dados
+    db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err,rows) {
         if (err) {
             return console.log(err)
         }
