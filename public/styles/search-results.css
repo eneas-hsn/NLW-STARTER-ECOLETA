@@ -1,3 +1,6 @@
+body{
+    background-color: white;
+}
 #page-search-results{
     width: 90%;
     max-width: 1100px;
@@ -61,13 +64,14 @@ main .card p{
     line-height: 26px;
     color: #6c6c80;
 }
-body:after {
+body::after {
     content: '';
-    position: fixed;
-    background: white;
-    top: 260px;
+    position: absolute;
+    background: #f0f0f5;
+    top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+    height: 16rem;
     z-index: -1;
 }
