@@ -1,7 +1,7 @@
 <h1 align="center">
  <img src="./public/icones/logo.svg">
 </h1>
-<h1><img src=https://media.giphy.com/media/LlFbmqfYxh9puPMTcc/giphy.gif> </h1>
+<h1 align="center"><img src=https://media.giphy.com/media/LlFbmqfYxh9puPMTcc/giphy.gif> </h1>
 
 ## Índice
 - [No que me agregou](#-No-que-me-agregou)
