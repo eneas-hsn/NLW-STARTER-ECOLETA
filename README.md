@@ -10,7 +10,7 @@
 - [Como baixar o projeto](#Como-baixar-o-projeto)
 
 ---
-## No que me agregou
+## Em que me agregou
 Esse projeto me fez chegar no próximo nível de aprendizado sobre como funciona um site real, gostei muito dos resultados e sigo focado para aprender mais ainda sobre essas tecnologias incriveis.
 
 ---
